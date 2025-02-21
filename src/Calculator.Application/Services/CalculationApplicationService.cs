@@ -59,7 +59,7 @@ public class CalculationApplicationService : ICalculationApplicationService
 
     public CalculatedResponseDto ExtractRoot(RootRequestDto dto, CancellationToken token = default)
     {
-        var baseNumber = dto.BaseNumber;
+        var baseNumber = dto.BaseRootNumber;
         var rootDegree = dto.RootDegree;
 
         _logger.LogInformation("[{ServiceName}]: Starting to extract root of degree {RootDegree} from {BaseNumber}.", ServiceName, rootDegree, baseNumber);

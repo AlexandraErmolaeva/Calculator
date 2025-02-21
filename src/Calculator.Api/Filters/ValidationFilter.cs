@@ -97,7 +97,7 @@ public class ValidationFilter : IActionFilter
                 break;
 
             case RootRequestDto root:
-                numbers.Add(root.BaseNumber);
+                numbers.Add(root.BaseRootNumber);
                 numbers.Add(root.RootDegree);
                 break;
         }

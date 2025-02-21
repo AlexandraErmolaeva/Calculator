@@ -31,7 +31,6 @@ public class CalculatorController : ControllerBase
     [SwaggerResponse(200, "Успешное выполнение.", typeof(CalculatedResponseDto))]
     [SwaggerResponse(400, "Некорректные входные данные.", typeof(ProblemDetails))]
     [HttpPost("add")]
-
     public ActionResult<CalculatedResponseDto> Add([FromBody] MathOperandsRequestDto dto, CancellationToken token)
     {
         var result = _calculationApplicationService.Add(dto, token);
@@ -151,7 +150,7 @@ public class CalculatorController : ControllerBase
     [SwaggerOperation(Summary = "Вычисляет математическое выражение.", Description = "Выполняет математическое выражение при помощи парсера. Поддерживает выражение \"sqrt\" для извлечения корня.")]
     [SwaggerResponse(200, "Успешное выполнение.", typeof(CalculatedResponseDto))]
     [SwaggerResponse(400, "Некорректное выражение.", typeof(ProblemDetails))]
-    [HttpPost("calc")]
+    [HttpPost("expr")]
     public IActionResult MathExpression([FromBody] MathExpressionRequestDto dto, CancellationToken token)
     {
         return Ok(_calculationApplicationService.CalculateMathExpression(dto, token));

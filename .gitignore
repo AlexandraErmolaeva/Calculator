@@ -315,6 +315,7 @@ ui/calculator-ui/.vite/
 ui/calculator-ui/.eslintcache
 ui/calculator-ui/coverage/
 ui/calculator-ui/test-results/
+ui/calculator-ui/.env.development
 
 # Visual Studio LightSwitch build output
 **/*.HTMLClient/GeneratedArtifacts

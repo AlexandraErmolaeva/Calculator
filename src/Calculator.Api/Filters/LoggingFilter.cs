@@ -45,11 +45,11 @@ public class LoggingFilter : IActionFilter
                 _logger.LogWarning("[{FilterName}]: Action '{ControllerName}.{ActionName}' completed with error status {StatusCode}.", FilterName, controllerName, actionName, statusCode);
             }
 
-            //else if (context.Result is ObjectResult objectResult)
-            //    _logger.LogInformation("[{FilterName}]: Action '{ControllerName}.{ActionName}' completed with result.", FilterName, controllerName, actionName);
+            else if (context.Result is ObjectResult objectResult)
+                _logger.LogInformation("[{FilterName}]: Action '{ControllerName}.{ActionName}' completed with result.", FilterName, controllerName, actionName);
 
             else
-                _logger.LogInformation("[{FilterName}]: Action '{ControllerName}.{ActionName}' completed without result", FilterName, controllerName, actionName);
+                _logger.LogInformation("[{FilterName}]: Action '{ControllerName}.{ActionName}' completed without result.", FilterName, controllerName, actionName);
         }
     }
 }

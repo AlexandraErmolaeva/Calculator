@@ -20,7 +20,7 @@ public class MathNetExpressionParser : IExpressionParser
         }
         catch (Exception ex)
         {
-            throw new MathExpressionException($"Invalid expression or evaluation error: {ex.Message}");
+            throw new MathExpressionException("An error occurred during the expression evaluation process.");
         }
     }
 }

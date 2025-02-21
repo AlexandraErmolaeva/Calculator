@@ -20,6 +20,17 @@ builder.Host.UseSerilog();
 LogInformation("- Adding Services...");
 services.AddServices();
 
+LogInformation("- Adding CORS...");
+services.AddCors(options =>
+{
+    options.AddPolicy("AllowLocalhost8080", builder =>
+    {
+        builder.WithOrigins("http://localhost:8080")
+               .AllowAnyMethod()
+               .AllowAnyHeader();
+    });
+});
+
 LogInformation("- Adding Controllers...");
 services.AddControllers(options =>
 {
@@ -53,6 +64,9 @@ app.UseMiddleware<LoggingMiddleware>();
 
 LogInformation($"- Using {nameof(ExceptionHandlingMiddleware)}...");
 app.UseMiddleware<ExceptionHandlingMiddleware>();
+
+LogInformation("- Using CORS...");
+app.UseCors("AllowLocalhost8080");
 
 LogInformation("- Using Routing...");
 app.UseRouting();

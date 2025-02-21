@@ -1,9 +1,9 @@
-Calculator Project
+# Calculator Project
 
-Этот проект включает в себя frontend (Vue.js) и backend (ASP.NET Core). Перед запуском необходимо выполнить несколько шагов по установке зависимостей и сборке проекта.
+## Этот проект включает в себя frontend (Vue.js) и backend (ASP.NET Core). Перед запуском необходимо выполнить несколько шагов по установке зависимостей и сборке проекта.
 
-Установка и запуск
-
+# Установка и запуск
+```bash
 1. Клонирование репозитория
 git clone https://github.com/your-repository/calculator.git
 cd calculator

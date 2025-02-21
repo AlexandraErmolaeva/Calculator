@@ -24,10 +24,14 @@
 	</Target>
 
 	<Target Name="BuildVue" BeforeTargets="Build">
-		<Exec Command="npm run build --prefix ../../ui/calculator-ui" />
+		<!-- Устанавливаем зависимости -->
+		<Exec WorkingDirectory="$(SolutionDir)ui\calculator-ui" Command="npm install" />
+
+		<!-- Сборка проекта -->
+		<Exec WorkingDirectory="$(SolutionDir)ui\calculator-ui" Command="npm run build" />
 
 		<ItemGroup>
-			<DistFiles Include="../../ui/calculator-ui/dist\**\*" />
+			<DistFiles Include="$(SolutionDir)ui\calculator-ui\dist\**\*" />
 		</ItemGroup>
 
 		<Copy SourceFiles="@(DistFiles)" DestinationFolder="$(ProjectDir)wwwroot" />
